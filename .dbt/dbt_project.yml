@@ -1,0 +1,23 @@
+name: 'hevy_transformations'
+version: '1.0.0'
+config-version: 2
+
+profile: 'hevy_mysql'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  hevy_transformations:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

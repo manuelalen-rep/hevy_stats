@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: BRONZE
+    tables:
+      - name: workout_data
+        loaded_at_field: _loaded_at
+
+        #freshness para garantizar el data quality
+
+        freshness:
+          warn_after:
+            count: 3
+            period: day
+          error_after:
+            count: 7
+            period: day
