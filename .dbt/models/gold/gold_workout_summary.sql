@@ -10,7 +10,7 @@ WITH parsed AS (
                 'ene','jan'),'abr','apr'),'ago','aug'),'dic','dec'),
             '%e %b %Y, %H:%i'
         ) AS start_ts
-    FROM {{ ref('silver_workout') }}
+    FROM {{ source('silver', 'silver_workout') }}
 )
 
 SELECT
