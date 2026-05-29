@@ -19,5 +19,8 @@ models:
   hevy_transformations:
     staging:
       +materialized: view
+    gold:
+      +materialized: view
+      +schema: GOLD
     marts:
       +materialized: table
